@@ -26,6 +26,7 @@ Partial Class Form1
         Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -823,6 +824,7 @@ Partial Class Form1
         '
         'MenuStrip1
         '
+        Me.MenuStrip1.BackgroundImage = Global.Jeu_Nim.My.Resources.Resources.marbre
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FichierToolStripMenuItem, Me.AProposToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
@@ -966,6 +968,7 @@ Partial Class Form1
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.Control
+        Me.BackgroundImage = Global.Jeu_Nim.My.Resources.Resources.marbre
         Me.ClientSize = New System.Drawing.Size(1184, 561)
         Me.Controls.Add(Me.LB_Partie)
         Me.Controls.Add(Me.L_NombrePartie)
@@ -996,7 +999,9 @@ Partial Class Form1
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.Chart1)
         Me.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
+        Me.MaximizeBox = False
         Me.MaximumSize = New System.Drawing.Size(1200, 600)
         Me.Name = "Form1"
         Me.Text = "Jeu de Nim"

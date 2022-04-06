@@ -50,6 +50,9 @@
   <PropertyGroup>
     <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -166,6 +169,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="logo.ico" />
     <Content Include="Resources\a_moi.gif" />
     <Content Include="Resources\a_vous.gif" />
     <Content Include="Resources\choisie.gif" />
