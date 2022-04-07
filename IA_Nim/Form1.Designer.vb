@@ -99,6 +99,7 @@ Partial Class Form1
         Me.OuvrirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.EnregistrerSousToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.QuitterToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.StatistiquesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AProposToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.B_Rejouer = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
@@ -109,6 +110,7 @@ Partial Class Form1
         Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.L_NombrePartie = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.GB_Choix_en_cours.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -825,7 +827,7 @@ Partial Class Form1
         'MenuStrip1
         '
         Me.MenuStrip1.BackgroundImage = Global.Jeu_Nim.My.Resources.Resources.marbre
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FichierToolStripMenuItem, Me.AProposToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FichierToolStripMenuItem, Me.StatistiquesToolStripMenuItem, Me.AProposToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(1184, 24)
@@ -836,8 +838,8 @@ Partial Class Form1
         '
         Me.FichierToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OuvrirToolStripMenuItem, Me.EnregistrerSousToolStripMenuItem, Me.QuitterToolStripMenuItem})
         Me.FichierToolStripMenuItem.Name = "FichierToolStripMenuItem"
-        Me.FichierToolStripMenuItem.Size = New System.Drawing.Size(49, 20)
-        Me.FichierToolStripMenuItem.Text = "Partie"
+        Me.FichierToolStripMenuItem.Size = New System.Drawing.Size(36, 20)
+        Me.FichierToolStripMenuItem.Text = "Jeu"
         '
         'OuvrirToolStripMenuItem
         '
@@ -856,6 +858,12 @@ Partial Class Form1
         Me.QuitterToolStripMenuItem.Name = "QuitterToolStripMenuItem"
         Me.QuitterToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
         Me.QuitterToolStripMenuItem.Text = "Quitter"
+        '
+        'StatistiquesToolStripMenuItem
+        '
+        Me.StatistiquesToolStripMenuItem.Name = "StatistiquesToolStripMenuItem"
+        Me.StatistiquesToolStripMenuItem.Size = New System.Drawing.Size(79, 20)
+        Me.StatistiquesToolStripMenuItem.Text = "Statistiques"
         '
         'AProposToolStripMenuItem
         '
@@ -1114,4 +1122,6 @@ Partial Class Form1
     Friend WithEvents Chart1 As DataVisualization.Charting.Chart
     Friend WithEvents L_NombrePartie As Label
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents StatistiquesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
 End Class

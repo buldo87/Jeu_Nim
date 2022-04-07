@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<NIMConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<ListAllumettes>
+		<Allumette>
+			<PBVisible>false</PBVisible>
+			<LBValues />
+			<LBIndex>-1</LBIndex>
+			<TBValue />
+		</Allumette>
+		<Allumette>
+			<PBVisible>false</PBVisible>
+			<LBValues>
+				<string>1</string>
+			</LBValues>
+			<LBIndex>-1</LBIndex>
+			<TBValue />
+		</Allumette>
+		<Allumette>
+			<PBVisible>false</PBVisible>
+			<LBValues>
+				<string>2</string>
+			</LBValues>
+			<LBIndex>-1</LBIndex>
+			<TBValue />
+		</Allumette>
+		<Allumette>
+			<PBVisible>false</PBVisible>
+			<LBValues>
+				<string>3</string>
+			</LBValues>
+			<LBIndex>-1</LBIndex>
+			<TBValue />
+		</Allumette>
+		<Allumette>
+			<PBVisible>false</PBVisible>
+			<LBValues />
+			<LBIndex>-1</LBIndex>
+			<TBValue />
+		</Allumette>
+		<Allumette>
+			<PBVisible>false</PBVisible>
+			<LBValues>
+				<string>1</string>
+			</LBValues>
+			<LBIndex>-1</LBIndex>
+			<TBValue />
+		</Allumette>
+		<Allumette>
+			<PBVisible>false</PBVisible>
+			<LBValues>
+				<string>2</string>
+			</LBValues>
+			<LBIndex>-1</LBIndex>
+			<TBValue />
+		</Allumette>
+		<Allumette>
+			<PBVisible>false</PBVisible>
+			<LBValues>
+				<string>3</string>
+			</LBValues>
+			<LBIndex>-1</LBIndex>
+			<TBValue />
+		</Allumette>
+		<Allumette>
+			<PBVisible>false</PBVisible>
+			<LBValues />
+			<LBIndex>-1</LBIndex>
+			<TBValue />
+		</Allumette>
+		<Allumette>
+			<PBVisible>false</PBVisible>
+			<LBValues>
+				<string>1</string>
+			</LBValues>
+			<LBIndex>-1</LBIndex>
+			<TBValue>2</TBValue>
+		</Allumette>
+		<Allumette>
+			<PBVisible>false</PBVisible>
+			<LBValues>
+				<string>2</string>
+			</LBValues>
+			<LBIndex>-1</LBIndex>
+			<TBValue />
+		</Allumette>
+		<Allumette>
+			<PBVisible>false</PBVisible>
+			<LBValues>
+				<string>3</string>
+			</LBValues>
+			<LBIndex>-1</LBIndex>
+			<TBValue />
+		</Allumette>
+	</ListAllumettes>
+	<NombreAllumetteRestante>0</NombreAllumetteRestante>
+	<NombrebAllumetteDepart>0</NombrebAllumetteDepart>
+	<NombrebAllumettePrise>0</NombrebAllumettePrise>
+	<AllumetteRestante>0</AllumetteRestante>
+	<ScoreIA>22</ScoreIA>
+	<Scorehumain>24</Scorehumain>
+	<Prise>3</Prise>
+	<QuelNiveau>2</QuelNiveau>
+	<QuiCommence>Chacun son tour</QuiCommence>
+	<DerniereAllumette>perd</DerniereAllumette>
+	<CombienAllumette>12</CombienAllumette>
+	<DeroulementPartie>
+		<string>*** Règle en cours ***</string>
+		<string>Dernière allumette = perd</string>
+		<string>Niveau = 2</string>
+		<string>Qui commence = Chacun son tour</string>
+		<string>Prise maximum = 3</string>
+		<string>Nombre d'allumette = 12</string>
+		<string>**** Début de partie *** </string>
+		<string>Rejouons, Humain 23, IA 25</string>
+		<string>L'Humain prend 2 allumettes, il en reste 10</string>
+		<string>L'ordinateur prend 2 allumette(s), il en reste 8</string>
+		<string>L'Humain prend 3 allumettes, il en reste 5</string>
+		<string>L'ordinateur prend 1 allumette(s), il en reste 4</string>
+		<string>L'Humain prend 3 allumettes, il en reste 1</string>
+		<string>L'ordinateur prend 1 allumette(s), il en reste 0</string>
+		<string>l'Humain Gagne </string>
+	</DeroulementPartie>
+	<CommentaireIA>
+		<string>OUPPS j'ai perdu</string>
+		<string>Mais pourquoi ai-je fait ce choix quand il restait 10 allumette(s) ?</string>
+		<string>J' effaçe de mes choix possible : Prendre 2 allumette(s)</string>
+		<string>Mais ! Pff à mon tour ... </string>
+		<string>je n'ai plus de choix donc perdu pour moi</string>
+		<string>Mais ! Pff à mon tour ... </string>
+		<string>je n'ai plus de choix donc perdu pour moi</string>
+		<string>A mon tour ... </string>
+		<string>Mon choix est 2 pour 10 allumette(s)</string>
+	</CommentaireIA>
+	<ScorePartieIA>
+		<string>0</string>
+		<string>0</string>
+		<string>0</string>
+		<string>1</string>
+		<string>1</string>
+		<string>1</string>
+		<string>1</string>
+		<string>2</string>
+		<string>2</string>
+		<string>3</string>
+		<string>4</string>
+		<string>4</string>
+		<string>5</string>
+		<string>5</string>
+		<string>5</string>
+		<string>5</string>
+		<string>5</string>
+		<string>5</string>
+		<string>6</string>
+		<string>6</string>
+		<string>6</string>
+		<string>6</string>
+		<string>7</string>
+		<string>8</string>
+		<string>8</string>
+		<string>9</string>
+		<string>10</string>
+		<string>11</string>
+		<string>11</string>
+		<string>12</string>
+		<string>12</string>
+		<string>13</string>
+		<string>14</string>
+		<string>15</string>
+		<string>16</string>
+		<string>17</string>
+		<string>18</string>
+		<string>18</string>
+		<string>18</string>
+		<string>19</string>
+		<string>19</string>
+		<string>19</string>
+		<string>20</string>
+		<string>21</string>
+		<string>22</string>
+		<string>22</string>
+
+
+	</ScorePartieIA>
+	<ScorePartieHumain>
+		<string>1</string>
+		<string>2</string>
+		<string>3</string>
+		<string>3</string>
+		<string>4</string>
+		<string>5</string>
+		<string>6</string>
+		<string>6</string>
+		<string>7</string>
+		<string>7</string>
+		<string>7</string>
+		<string>8</string>
+		<string>8</string>
+		<string>9</string>
+		<string>10</string>
+		<string>11</string>
+		<string>12</string>
+		<string>13</string>
+		<string>13</string>
+		<string>14</string>
+		<string>15</string>
+		<string>16</string>
+		<string>16</string>
+		<string>16</string>
+		<string>17</string>
+		<string>17</string>
+		<string>17</string>
+		<string>17</string>
+		<string>18</string>
+		<string>18</string>
+		<string>19</string>
+		<string>19</string>
+		<string>19</string>
+		<string>19</string>
+		<string>19</string>
+		<string>19</string>
+		<string>19</string>
+		<string>20</string>
+		<string>21</string>
+		<string>21</string>
+		<string>22</string>
+		<string>23</string>
+		<string>23</string>
+		<string>23</string>
+		<string>23</string>
+		<string>24</string>
+
+	</ScorePartieHumain>
+	<Dernierchoix>
+		<string>10</string>
+		<string>10</string>
+		<string>10</string>
+	</Dernierchoix>
+</NIMConfig>

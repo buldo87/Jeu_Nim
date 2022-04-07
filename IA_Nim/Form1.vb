@@ -134,7 +134,7 @@ Public Class Form1
         LB_Partie.Items.Clear()
         LB_IA.Items.Clear()
 
-        LB_Partie.Items.Add("*** Règle en cours ***")
+        LB_Partie.Items.Add("*** Règles en cours ***")
         LB_Partie.Items.Add("Dernière allumette = " & Cb_PerdGagne.Text)
         LB_Partie.Items.Add("Niveau = " & CB_Niveau.Text)
         LB_Partie.Items.Add("Qui commence = " & CB_Commence.Text)
@@ -358,6 +358,8 @@ Public Class Form1
             L_Dernier_choix.Text = nbAllumetteRestante
             t = listAllumettes.Item(index).choix.Items.Item(rancon.Next(count_choix_possible)) ' random des possibles
             LB_IA.Items.Insert(0, "Mon choix est " & t & " pour " & nbAllumetteRestante & " allumette(s), il en reste " & nbAllumetteRestante)
+
+
             LB_Choix_IA.SelectedIndex = t - 1
             LB_IA.Items.Insert(0, "A mon tour ... ")
 
@@ -895,7 +897,7 @@ Public Class Form1
 
         If SaveFileDialog1.ShowDialog = 1 Then
             Dim path As String = SaveFileDialog1.FileName
-            Dim config As NIMConfig = New NIMConfig()
+            Dim config As New NIMConfig()
 
             ' Entregistrer l'image du chart dans le  stream    
             'Chart1.SaveImage(path, System.Drawing.Imaging.ImageFormat.Bmp)
@@ -903,7 +905,7 @@ Public Class Form1
             'Dim bmp As New Bitmap(path)
 
             For i As Integer = 0 To NB_ALLUMETTES
-                Dim allu As NIMConfig.Allumette = New NIMConfig.Allumette
+                Dim allu As New NIMConfig.Allumette
                 allu.PBVisible = listAllumettes.Item(i).image.Visible
 
                 For Each val As String In listAllumettes.Item(i).choix.Items
@@ -948,7 +950,7 @@ Public Class Form1
             'Dim path As String = My.Application.Info.DirectoryPath & "\mapartie.txt"
 
             ' Pour faire joli fichier
-            Dim settings As XmlWriterSettings = New XmlWriterSettings()
+            Dim settings As New XmlWriterSettings()
             settings.Indent = True
             settings.IndentChars = (ControlChars.Tab)
 
@@ -967,71 +969,90 @@ Public Class Form1
         End If
         'Dim path As String = My.Application.Info.DirectoryPath & "\mapartie.txt"
     End Sub
+    Private Sub remplir()
+        Chart1.Series(1).Points.Clear()
+        Chart1.Series(0).Points.Clear()
+        'Dim path As String = My.Application.Info.DirectoryPath & "\mapartie.txt"
+        Dim path As String = OpenFileDialog1.FileName
+        Dim config As New NIMConfig()
 
+        Dim serializer As New XmlSerializer(config.GetType())
+        Using reader = XmlReader.Create(path)
+            config = CType(serializer.Deserialize(reader), NIMConfig)
+        End Using
+
+        For i As Integer = 0 To (config.ListAllumettes.Count - 1)
+            listAllumettes.Item(i).image.Visible = config.ListAllumettes(i).PBVisible
+
+            listAllumettes.Item(i).choix.Items.Clear()
+            For Each val As String In config.ListAllumettes(i).LBValues
+                listAllumettes.Item(i).choix.Items.Add(val)
+            Next
+
+            listAllumettes.Item(i).choix.SelectedIndex = config.ListAllumettes(i).LBIndex
+            listAllumettes.Item(i).encours.Text = config.ListAllumettes(i).TBValue
+        Next
+        Tb_allumette_restante.Text = config.AllumetteRestante
+        L_Score_IA.Text = config.ScoreIA
+        L_Score_Humain.Text = config.Scorehumain
+        Cb_Prise.Text = config.Prise
+        CB_Niveau.Text = config.QuelNiveau
+        CB_Commence.Text = config.QuiCommence
+        Cb_PerdGagne.Text = config.DerniereAllumette
+        CB_allumette.Text = config.CombienAllumette
+        L_NombrePartie.Text = (CInt(L_Score_IA.Text) + CInt(L_Score_Humain.Text))
+        ' DeroulementPartie As List(Of String)
+        LB_Partie.Items.Clear()
+        For Each val As String In config.DeroulementPartie
+            LB_Partie.Items.Add(val)
+        Next
+
+        ' CommentaireIA
+        LB_IA.Items.Clear()
+        For Each val As String In config.CommentaireIA
+            LB_IA.Items.Add(val)
+        Next
+
+        ' Score partie IA
+        For Each val As String In config.ScorePartieIA
+            LB_Score_IA.Items.Insert(0, val)
+        Next
+
+        ' Score partie Humain
+        For Each val As String In config.ScorePartieHumain
+            LB_Score_Humain.Items.Insert(0, val)
+        Next
+        For Each val As String In config.Dernierchoix
+            LB_dernier_choix_IA.Items.Add(val)
+        Next
+
+    End Sub
+    Private Sub refresh()
+        Dim path As String = OpenFileDialog1.FileName
+        Dim config As New NIMConfig()
+
+        Dim serializer As New XmlSerializer(config.GetType())
+        Using reader = XmlReader.Create(path)
+            config = CType(serializer.Deserialize(reader), NIMConfig)
+        End Using
+        L_Score_IA.Text = config.ScoreIA
+        L_Score_Humain.Text = config.Scorehumain
+        L_NombrePartie.Text = (CInt(L_Score_IA.Text) + CInt(L_Score_Humain.Text))
+
+
+    End Sub
     Private Sub OuvrirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OuvrirToolStripMenuItem.Click
         'ouvrir
         RemiseAZero()
 
         OpenFileDialog1.Filter = ("Fichier de configuration | *.xlm")
         If OpenFileDialog1.ShowDialog = 1 Then
-            Chart1.Series(1).Points.Clear()
-            Chart1.Series(0).Points.Clear()
-            'Dim path As String = My.Application.Info.DirectoryPath & "\mapartie.txt"
-            Dim path As String = OpenFileDialog1.FileName
-            Dim config As NIMConfig = New NIMConfig()
-
-            Dim serializer As New XmlSerializer(config.GetType())
-            Using reader = XmlReader.Create(path)
-                config = CType(serializer.Deserialize(reader), NIMConfig)
-            End Using
-
-            For i As Integer = 0 To (config.ListAllumettes.Count - 1)
-                listAllumettes.Item(i).image.Visible = config.ListAllumettes(i).PBVisible
-
-                listAllumettes.Item(i).choix.Items.Clear()
-                For Each val As String In config.ListAllumettes(i).LBValues
-                    listAllumettes.Item(i).choix.Items.Add(val)
-                Next
-
-                listAllumettes.Item(i).choix.SelectedIndex = config.ListAllumettes(i).LBIndex
-                listAllumettes.Item(i).encours.Text = config.ListAllumettes(i).TBValue
-            Next
-            Tb_allumette_restante.Text = config.AllumetteRestante
-            L_Score_IA.Text = config.ScoreIA
-            L_Score_Humain.Text = config.Scorehumain
-            Cb_Prise.Text = config.Prise
-            CB_Niveau.Text = config.QuelNiveau
-            CB_Commence.Text = config.QuiCommence
-            Cb_PerdGagne.Text = config.DerniereAllumette
-            CB_allumette.Text = config.CombienAllumette
-
-            ' DeroulementPartie As List(Of String)
-            LB_Partie.Items.Clear()
-            For Each val As String In config.DeroulementPartie
-                LB_Partie.Items.Add(val)
-            Next
-
-            ' CommentaireIA
-            LB_IA.Items.Clear()
-            For Each val As String In config.CommentaireIA
-                LB_IA.Items.Add(val)
-            Next
-
-            ' Score partie IA
-            For Each val As String In config.ScorePartieIA
-                LB_Score_IA.Items.Insert(0, val)
-            Next
-
-            ' Score partie Humain
-            For Each val As String In config.ScorePartieHumain
-                LB_Score_Humain.Items.Insert(0, val)
-            Next
-            For Each val As String In config.Dernierchoix
-                LB_dernier_choix_IA.Items.Add(val)
-            Next
+            remplir()
+            refresh()
         End If
         AfficherAllumette()
         Graphique()
+
     End Sub
 
     Private Sub AProposToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AProposToolStripMenuItem.Click
@@ -1104,7 +1125,10 @@ Public Class Form1
         finTempo = True
     End Sub
 
-    Private Sub Label8_Click(sender As Object, e As EventArgs) Handles Label8.Click
+
+    Private Sub StatistiquesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StatistiquesToolStripMenuItem.Click
+        statistique.Show()
 
     End Sub
+
 End Class
