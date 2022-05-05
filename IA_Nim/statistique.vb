@@ -4,12 +4,21 @@ Imports System.Xml.Serialization
 
 
 Public Class statistique
+    Public Sub New()
+
+        ' Cet appel est requis par le concepteur.
+        InitializeComponent()
+
+        ' Ajoutez une initialisation quelconque après l'appel InitializeComponent().
+
+    End Sub
+
     Private Sub statistique_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Dim d As System.IO.FileInfo
         'If d Then
         'Lecture(My.Application.Info.DirectoryPath & "\niveau2.xlm")
         For i As Integer = 0 To 10000
-            Next
+        Next
         L_Score_IA.Text = Form1.L_Score_IA.Text
         L_Score_Humain.Text = Form1.L_Score_Humain.Text
         Cb_Prise.Text = Form1.Cb_Prise.Text
@@ -25,7 +34,7 @@ Public Class statistique
         Next
 
         Graphique()
-       ' End If
+        ' End If
 
     End Sub
     Private Sub Graphique()
@@ -41,7 +50,7 @@ Public Class statistique
         Next
     End Sub
 
-    Private Sub OuvrirToolStripMenuItem_Click(sender As Object, e As EventArgs) 
+    Private Sub OuvrirToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
 
 

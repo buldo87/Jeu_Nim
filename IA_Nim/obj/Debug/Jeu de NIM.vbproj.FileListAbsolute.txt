@@ -1,0 +1,13 @@
+C:\Users\Djeman\Downloads\Jeu_Nim-master\IA_Nim\bin\Debug\Jeu de Nim.exe.config
+C:\Users\Djeman\Downloads\Jeu_Nim-master\IA_Nim\bin\Debug\Jeu de Nim.exe
+C:\Users\Djeman\Downloads\Jeu_Nim-master\IA_Nim\bin\Debug\Jeu de Nim.pdb
+C:\Users\Djeman\Downloads\Jeu_Nim-master\IA_Nim\bin\Debug\Jeu de Nim.xml
+C:\Users\Djeman\Downloads\Jeu_Nim-master\IA_Nim\obj\Debug\Jeu_Nim.AboutBox1.resources
+C:\Users\Djeman\Downloads\Jeu_Nim-master\IA_Nim\obj\Debug\Jeu_Nim.Form1.resources
+C:\Users\Djeman\Downloads\Jeu_Nim-master\IA_Nim\obj\Debug\Jeu_Nim.Resources.resources
+C:\Users\Djeman\Downloads\Jeu_Nim-master\IA_Nim\obj\Debug\Jeu_Nim.statistique.resources
+C:\Users\Djeman\Downloads\Jeu_Nim-master\IA_Nim\obj\Debug\Jeu de NIM.vbproj.GenerateResource.cache
+C:\Users\Djeman\Downloads\Jeu_Nim-master\IA_Nim\obj\Debug\Jeu de NIM.vbproj.CoreCompileInputs.cache
+C:\Users\Djeman\Downloads\Jeu_Nim-master\IA_Nim\obj\Debug\Jeu de Nim.exe
+C:\Users\Djeman\Downloads\Jeu_Nim-master\IA_Nim\obj\Debug\Jeu de Nim.xml
+C:\Users\Djeman\Downloads\Jeu_Nim-master\IA_Nim\obj\Debug\Jeu de Nim.pdb

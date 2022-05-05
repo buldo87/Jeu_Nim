@@ -129,7 +129,9 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="NIMConfig.vb" />
-    <Compile Include="statistique.Designer.vb" />
+    <Compile Include="statistique.Designer.vb">
+      <DependentUpon>statistique.vb</DependentUpon>
+    </Compile>
     <Compile Include="statistique.vb">
       <SubType>Form</SubType>
     </Compile>
