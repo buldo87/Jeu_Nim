@@ -74,7 +74,7 @@ Partial Class statistique
         ChartArea1.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot
         ChartArea1.AxisY.Title = "Partie Gagnées"
         ChartArea1.AxisY.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ChartArea1.BackImage = "C:\Users\buldo\Desktop\ia\IA_Nim\IA_Nim_encours\IA_Nim\Resources\marbre.jpg"
+        ChartArea1.BackImage = ""
         ChartArea1.BackSecondaryColor = System.Drawing.Color.Transparent
         ChartArea1.BorderColor = System.Drawing.Color.Transparent
         ChartArea1.BorderWidth = 0
