@@ -57,6 +57,7 @@ Partial Class statistique
         'Chart1
         '
         Me.Chart1.BackColor = System.Drawing.Color.Transparent
+        Me.Chart1.BackGradientStyle = System.Windows.Forms.DataVisualization.Charting.GradientStyle.DiagonalRight
         Me.Chart1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.Chart1.BorderlineColor = System.Drawing.Color.Transparent
         Me.Chart1.BorderlineWidth = 0
@@ -72,9 +73,9 @@ Partial Class statistique
         ChartArea1.AxisX2.Title = "Nombre de partie terminées"
         ChartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.DarkGray
         ChartArea1.AxisY.MajorGrid.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot
-        ChartArea1.AxisY.Title = "Partie Gagnées"
+        ChartArea1.AxisY.Title = "Parties Gagnées"
         ChartArea1.AxisY.TitleFont = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ChartArea1.BackImage = ""
+        ChartArea1.BackImageTransparentColor = System.Drawing.Color.White
         ChartArea1.BackSecondaryColor = System.Drawing.Color.Transparent
         ChartArea1.BorderColor = System.Drawing.Color.Transparent
         ChartArea1.BorderWidth = 0
@@ -116,7 +117,7 @@ Partial Class statistique
         Title1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Bottom
         Title1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Title1.Name = "Title1"
-        Title1.Text = "Nombre de partie terminées"
+        Title1.Text = "Nombre de parties terminées"
         Me.Chart1.Titles.Add(Title1)
         '
         'LB_Score_Humain
@@ -150,7 +151,7 @@ Partial Class statistique
         Me.CB_Niveau.Name = "CB_Niveau"
         Me.CB_Niveau.Size = New System.Drawing.Size(86, 28)
         Me.CB_Niveau.TabIndex = 117
-        Me.CB_Niveau.Text = "2"
+        Me.CB_Niveau.Text = "1"
         '
         'L_Niveau
         '
@@ -271,9 +272,9 @@ Partial Class statistique
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(233, 4)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(205, 20)
+        Me.Label4.Size = New System.Drawing.Size(213, 20)
         Me.Label4.TabIndex = 107
-        Me.Label4.Text = "Nombre de partie terminées"
+        Me.Label4.Text = "Nombre de parties terminées"
         '
         'CB_allumette
         '

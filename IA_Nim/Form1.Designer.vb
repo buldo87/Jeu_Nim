@@ -800,7 +800,7 @@ Partial Class Form1
         Me.CB_Niveau.Name = "CB_Niveau"
         Me.CB_Niveau.Size = New System.Drawing.Size(86, 28)
         Me.CB_Niveau.TabIndex = 87
-        Me.CB_Niveau.Text = "2"
+        Me.CB_Niveau.Text = "1"
         '
         'L_Niveau
         '

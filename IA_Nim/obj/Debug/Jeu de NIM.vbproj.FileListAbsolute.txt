@@ -11,3 +11,18 @@ C:\Users\Djeman\Downloads\Jeu_Nim-master\IA_Nim\obj\Debug\Jeu de NIM.vbproj.Core
 C:\Users\Djeman\Downloads\Jeu_Nim-master\IA_Nim\obj\Debug\Jeu de Nim.exe
 C:\Users\Djeman\Downloads\Jeu_Nim-master\IA_Nim\obj\Debug\Jeu de Nim.xml
 C:\Users\Djeman\Downloads\Jeu_Nim-master\IA_Nim\obj\Debug\Jeu de Nim.pdb
+C:\Users\buldo\source\repos\buldo87\Jeu_Nim\IA_Nim\bin\Debug\Jeu de Nim.exe.config
+C:\Users\buldo\source\repos\buldo87\Jeu_Nim\IA_Nim\bin\Debug\Jeu de Nim.exe
+C:\Users\buldo\source\repos\buldo87\Jeu_Nim\IA_Nim\bin\Debug\Jeu de Nim.pdb
+C:\Users\buldo\source\repos\buldo87\Jeu_Nim\IA_Nim\bin\Debug\Jeu de Nim.xml
+C:\Users\buldo\source\repos\buldo87\Jeu_Nim\IA_Nim\obj\Debug\Jeu de NIM.vbproj.AssemblyReference.cache
+C:\Users\buldo\source\repos\buldo87\Jeu_Nim\IA_Nim\obj\Debug\Jeu de NIM.vbproj.SuggestedBindingRedirects.cache
+C:\Users\buldo\source\repos\buldo87\Jeu_Nim\IA_Nim\obj\Debug\Jeu_Nim.AboutBox1.resources
+C:\Users\buldo\source\repos\buldo87\Jeu_Nim\IA_Nim\obj\Debug\Jeu_Nim.Form1.resources
+C:\Users\buldo\source\repos\buldo87\Jeu_Nim\IA_Nim\obj\Debug\Jeu_Nim.Resources.resources
+C:\Users\buldo\source\repos\buldo87\Jeu_Nim\IA_Nim\obj\Debug\Jeu_Nim.statistique.resources
+C:\Users\buldo\source\repos\buldo87\Jeu_Nim\IA_Nim\obj\Debug\Jeu de NIM.vbproj.GenerateResource.cache
+C:\Users\buldo\source\repos\buldo87\Jeu_Nim\IA_Nim\obj\Debug\Jeu de NIM.vbproj.CoreCompileInputs.cache
+C:\Users\buldo\source\repos\buldo87\Jeu_Nim\IA_Nim\obj\Debug\Jeu de Nim.exe
+C:\Users\buldo\source\repos\buldo87\Jeu_Nim\IA_Nim\obj\Debug\Jeu de Nim.xml
+C:\Users\buldo\source\repos\buldo87\Jeu_Nim\IA_Nim\obj\Debug\Jeu de Nim.pdb

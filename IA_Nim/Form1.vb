@@ -139,7 +139,7 @@ Public Class Form1
         LB_Partie.Items.Add("Niveau = " & CB_Niveau.Text)
         LB_Partie.Items.Add("Qui commence = " & CB_Commence.Text)
         LB_Partie.Items.Add("Prise maximum = " & Cb_Prise.Text)
-        LB_Partie.Items.Add("Nombre d'allumette = " & CB_allumette.Text)
+        LB_Partie.Items.Add("Nombre d'allumettes = " & CB_allumette.Text)
         LB_Partie.Items.Add("**** Début de partie *** ")
         LB_Choix_IA.ClearSelected()
     End Sub
@@ -326,9 +326,9 @@ Public Class Form1
                                      If Tb_allumette_restante.Text < 1 Then
 
                                          If Cb_PerdGagne.SelectedItem.ToString = "gagne" Then
-                                             perd() ' quand IA perd
+                                             Perd() ' quand IA perd
                                          Else
-                                             gagne() ' quand IA gagne
+                                             Gagne() ' quand IA gagne
 
                                          End If
                                          PartieEncours = Partie.Fin
@@ -379,9 +379,9 @@ Public Class Form1
 
         If nbAllumetteRestante <= 0 Then
             If Cb_PerdGagne.SelectedItem.ToString = "perd" Then
-                perd()
+                Perd()
             Else
-                gagne()
+                Gagne()
             End If
         End If
 
@@ -430,9 +430,9 @@ Public Class Form1
 
         If nbAllumetteRestante <= 0 Then
             If Cb_PerdGagne.SelectedItem.ToString = "perd" Then
-                perd()
+                Perd()
             Else
-                gagne()
+                Gagne()
             End If
 
 
@@ -485,9 +485,9 @@ Public Class Form1
 
         If nbAllumetteRestante <= 0 Then
             If Cb_PerdGagne.SelectedItem.ToString = "perd" Then
-                perd()
+                Perd()
             Else
-                gagne()
+                Gagne()
             End If
         End If
         LB_dernier_choix_IA.Items.Add(L_Dernier_choix.Text)
@@ -541,9 +541,9 @@ Public Class Form1
         LB_Partie.Items.Add("L'Ordinateur prend " & t & " allumette(s), il en reste " & nbAllumetteRestante)
         If nbAllumetteRestante <= 0 Then
             If Cb_PerdGagne.SelectedItem.ToString = "perd" Then
-                perd()
+                Perd()
             Else
-                gagne()
+                Gagne()
             End If
         End If
         LB_dernier_choix_IA.Items.Add(L_Dernier_choix.Text)
@@ -557,7 +557,7 @@ Public Class Form1
         listAllumettes.Item(value).choix.Items.Clear()
         listAllumettes.Item(value).choix.Items.Add(cindex)
     End Sub
-    Public Sub gagne() ' quand IA gagne
+    Public Sub Gagne() ' quand IA gagne
         GB_Setup.Enabled = Enabled
         L_dialog.Text = "L'Ordinateur Gagne "
 
@@ -593,7 +593,7 @@ Public Class Form1
         Graphique()
     End Sub
 
-    Public Sub perd() ' quand IA perd
+    Public Sub Perd() ' quand IA perd
         LB_Partie.Items.Add("l'Humain Gagne ")
         L_Score_Humain.Text = L_Score_Humain.Text + 1
         LB_Score_IA.Items.Insert(0, L_Score_IA.Text)
@@ -657,8 +657,8 @@ Public Class Form1
         ' bouton 1 allumettes
         If Tb_allumette_restante.Text > 0 Then
 
-            Tb_allumette_restante.Text = Tb_allumette_restante.Text - 1
-            nbAllumetteRestante = nbAllumetteRestante - 1
+            Tb_allumette_restante.Text -= 1
+            nbAllumetteRestante -= 1
             LB_Partie.Items.Add("L'Humain prend 1 allumette, il en reste " & nbAllumetteRestante)
             AfficherAllumette()
             B_Rejouer.Enabled = False
@@ -680,8 +680,8 @@ Public Class Form1
         ' bouton 2 allumettes
         If Tb_allumette_restante.Text > 1 Then
 
-            Tb_allumette_restante.Text = Tb_allumette_restante.Text - 2
-            nbAllumetteRestante = nbAllumetteRestante - 2
+            Tb_allumette_restante.Text -= 2
+            nbAllumetteRestante -= 2
             LB_Partie.Items.Add("L'Humain prend 2 allumettes, il en reste " & nbAllumetteRestante)
             AfficherAllumette()
             B_Rejouer.Enabled = False
@@ -704,8 +704,8 @@ Public Class Form1
         ' bouton 3 allumettes
         If Tb_allumette_restante.Text > 2 Then
             GB_Setup.Enabled = False
-            Tb_allumette_restante.Text = Tb_allumette_restante.Text - 3
-            nbAllumetteRestante = nbAllumetteRestante - 3
+            Tb_allumette_restante.Text -= 3
+            nbAllumetteRestante -= 3
             LB_Partie.Items.Add("L'Humain prend 3 allumettes, il en reste " & nbAllumetteRestante)
             AfficherAllumette()
             B_Rejouer.Enabled = False
@@ -729,8 +729,8 @@ Public Class Form1
         If Tb_allumette_restante.Text > 3 Then
             GB_Setup.Enabled = False
 
-            Tb_allumette_restante.Text = Tb_allumette_restante.Text - 4
-            nbAllumetteRestante = nbAllumetteRestante - 4
+            Tb_allumette_restante.Text -= 4
+            nbAllumetteRestante -= 4
             LB_Partie.Items.Add("L'Humain prend 4 allumette, il en reste " & nbAllumetteRestante)
             AfficherAllumette()
             B_Rejouer.Enabled = False
@@ -825,7 +825,9 @@ Public Class Form1
             Button4.Enabled = Enabled
         End If
 
+        RemiseAZero()
         AfficherchoixPossible()
+        EffaceScore()
     End Sub
 
     Private Sub CB_allumette_SelectedIndexChanged_1(sender As Object, e As EventArgs)
@@ -841,7 +843,9 @@ Public Class Form1
     Private Sub CB_Commence_SelectedIndexChanged(sender As Object, e As EventArgs)
 
         'quiCommence As String
+        RemiseAZero()
         AfficherchoixPossible()
+        EffaceScore()
 
     End Sub
 
@@ -855,10 +859,14 @@ Public Class Form1
 
     Private Sub Cb_PerdGagne_SelectedIndexChanged(sender As Object, e As EventArgs)
         ' derniereAllumette As String
+        RemiseAZero()
         AfficherchoixPossible()
+        EffaceScore()
     End Sub
     Private Sub CB_Commence_SelectedIndexChanged_1(sender As Object, e As EventArgs)
+        RemiseAZero()
         AfficherchoixPossible()
+        EffaceScore()
     End Sub
     Public Sub AfficherchoixPossible()
         ' Efface les choix possible
@@ -969,7 +977,7 @@ Public Class Form1
         End If
         'Dim path As String = My.Application.Info.DirectoryPath & "\mapartie.txt"
     End Sub
-    Private Sub remplir()
+    Private Sub Remplir()
         Chart1.Series(1).Points.Clear()
         Chart1.Series(0).Points.Clear()
         'Dim path As String = My.Application.Info.DirectoryPath & "\mapartie.txt"
@@ -1027,7 +1035,7 @@ Public Class Form1
         Next
 
     End Sub
-    Private Sub refresh()
+    Private Sub Refresh()
         Dim path As String = OpenFileDialog1.FileName
         Dim config As New NIMConfig()
 
@@ -1047,8 +1055,8 @@ Public Class Form1
 
         OpenFileDialog1.Filter = ("Fichier de configuration | *.xlm")
         If OpenFileDialog1.ShowDialog = 1 Then
-            remplir()
-            refresh()
+            Remplir()
+            Refresh()
         End If
         AfficherAllumette()
         Graphique()
