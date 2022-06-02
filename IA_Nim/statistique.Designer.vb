@@ -127,12 +127,11 @@ Partial Class statistique
         Me.LB_Score_Humain.ItemHeight = 18
         Me.LB_Score_Humain.Location = New System.Drawing.Point(1083, 230)
         Me.LB_Score_Humain.Name = "LB_Score_Humain"
-        Me.LB_Score_Humain.Size = New System.Drawing.Size(57, 310)
+        Me.LB_Score_Humain.Size = New System.Drawing.Size(57, 292)
         Me.LB_Score_Humain.TabIndex = 123
         '
         'Label2
         '
-        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(950, 168)
@@ -155,7 +154,6 @@ Partial Class statistique
         '
         'L_Niveau
         '
-        Me.L_Niveau.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.L_Niveau.AutoSize = True
         Me.L_Niveau.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.L_Niveau.Location = New System.Drawing.Point(1032, 98)
@@ -190,7 +188,6 @@ Partial Class statistique
         '
         'Label10
         '
-        Me.Label10.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label10.AutoSize = True
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label10.Location = New System.Drawing.Point(918, 35)
@@ -213,7 +210,6 @@ Partial Class statistique
         '
         'Label3
         '
-        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(977, 69)
@@ -267,7 +263,6 @@ Partial Class statistique
         '
         'Label4
         '
-        Me.Label4.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(233, 4)
@@ -290,7 +285,6 @@ Partial Class statistique
         '
         'Label6
         '
-        Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(930, 129)
@@ -306,7 +300,7 @@ Partial Class statistique
         Me.LB_Score_IA.ItemHeight = 18
         Me.LB_Score_IA.Location = New System.Drawing.Point(934, 230)
         Me.LB_Score_IA.Name = "LB_Score_IA"
-        Me.LB_Score_IA.Size = New System.Drawing.Size(55, 310)
+        Me.LB_Score_IA.Size = New System.Drawing.Size(55, 292)
         Me.LB_Score_IA.TabIndex = 122
         '
         'L_Score_IA
@@ -380,9 +374,11 @@ Partial Class statistique
         Me.Controls.Add(Me.LB_Score_IA)
         Me.Controls.Add(Me.L_Score_IA)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MainMenuStrip = Me.MenuStrip1
         Me.MaximizeBox = False
+        Me.MaximumSize = New System.Drawing.Size(1200, 600)
         Me.Name = "statistique"
         Me.Text = "Statistiques"
         CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
