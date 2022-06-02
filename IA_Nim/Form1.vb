@@ -271,12 +271,12 @@ Public Class Form1
             End Select
 
             EnableUI(True)
-        B_Rejouer.Enabled = False
-        GB_Setup.Enabled = False
+            B_Rejouer.Enabled = False
+            GB_Setup.Enabled = False
 
         Else
 
-        IA()
+            IA()
 
         End If
     End Sub

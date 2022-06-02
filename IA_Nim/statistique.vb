@@ -13,7 +13,7 @@ Public Class statistique
 
     End Sub
 
-    Private Sub statistique_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub Statistique_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Dim d As System.IO.FileInfo
         'If d Then
         'Lecture(My.Application.Info.DirectoryPath & "\niveau2.xlm")
