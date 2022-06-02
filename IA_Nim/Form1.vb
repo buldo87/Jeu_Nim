@@ -404,8 +404,8 @@ Public Class Form1
             Dim count_choix_possible As Integer = listAllumettes.Item(index).choix.Items.Count
             If count_choix_possible = 0 Then 'si plus de choix possible
                 t = Math.Min(nbAllumetteRestante, Convert.ToInt32(LB_Choix_IA.Items.Item(rancon.Next(3))))
-                LB_IA.Items.Insert(0, "je n'ai plus de choix donc perdu pour moi")
-                LB_IA.Items.Insert(0, "Mais ! Pff à mon tour ... ")
+                LB_IA.Items.Insert(0, "je n'ai plus de choix donc perdu pour moi !!!!!!")
+                LB_IA.Items.Insert(0, "Mais ! Pfffff à mon tour ... ")
                 faitlagueule = True
                 LB_Choix_IA.SelectedIndex = t - 1
             Else
@@ -609,7 +609,7 @@ Public Class Form1
                 If L_Dernier_choix.Text <> 0 Then
                     If cindex <> -1 And listAllumettes.Item(nbAllumetteDepart - nbAllumettePrise).choix.Items.ToString <> "" Then listAllumettes.Item(value).choix.Items.RemoveAt(cindex) 'efface le dernier choix valide
                 End If
-                LB_IA.Items.Insert(0, "J' effaçe de mes choix possible : Prendre " & cindex + 1 & " allumette(s)")
+                LB_IA.Items.Insert(0, "J'effaçe de mes choix possible : Prendre " & cindex + 1 & " allumette(s)")
                 LB_IA.Items.Insert(0, "Mais pourquoi ai-je fait ce choix quand il restait " & L_Dernier_choix.Text & " allumette(s) ?")
                 LB_IA.Items.Insert(0, "OUPPS j'ai perdu")
             End If
@@ -911,7 +911,7 @@ Public Class Form1
             'Chart1.SaveImage(path, System.Drawing.Imaging.ImageFormat.Bmp)
             ' Créer un BitMap et le remplir avec le stream    
             'Dim bmp As New Bitmap(path)
-
+            config.QuelNiveau = CB_Niveau.Text
             For i As Integer = 0 To NB_ALLUMETTES
                 Dim allu As New NIMConfig.Allumette
                 allu.PBVisible = listAllumettes.Item(i).image.Visible
@@ -928,7 +928,7 @@ Public Class Form1
             config.ScoreIA = L_Score_IA.Text
             config.Scorehumain = L_Score_Humain.Text
             config.Prise = Cb_Prise.Text
-            config.QuelNiveau = CB_Niveau.Text
+
             config.QuiCommence = CB_Commence.Text
             config.DerniereAllumette = Cb_PerdGagne.Text
             config.CombienAllumette = CB_allumette.Text
@@ -988,7 +988,7 @@ Public Class Form1
         Using reader = XmlReader.Create(path)
             config = CType(serializer.Deserialize(reader), NIMConfig)
         End Using
-
+        CB_Niveau.Text = config.QuelNiveau
         For i As Integer = 0 To (config.ListAllumettes.Count - 1)
             listAllumettes.Item(i).image.Visible = config.ListAllumettes(i).PBVisible
 
@@ -1004,7 +1004,7 @@ Public Class Form1
         L_Score_IA.Text = config.ScoreIA
         L_Score_Humain.Text = config.Scorehumain
         Cb_Prise.Text = config.Prise
-        CB_Niveau.Text = config.QuelNiveau
+
         CB_Commence.Text = config.QuiCommence
         Cb_PerdGagne.Text = config.DerniereAllumette
         CB_allumette.Text = config.CombienAllumette
