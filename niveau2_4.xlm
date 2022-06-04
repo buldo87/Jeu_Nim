@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<NIMConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<ListAllumettes>
+		<Allumette>
+			<PBVisible>false</PBVisible>
+			<LBValues>
+				<string>1</string>
+			</LBValues>
+			<LBIndex>-1</LBIndex>
+			<TBValue />
+		</Allumette>
+		<Allumette>
+			<PBVisible>false</PBVisible>
+			<LBValues>
+				<string>1</string>
+				<string>2</string>
+			</LBValues>
+			<LBIndex>-1</LBIndex>
+			<TBValue />
+		</Allumette>
+		<Allumette>
+			<PBVisible>false</PBVisible>
+			<LBValues>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+			</LBValues>
+			<LBIndex>-1</LBIndex>
+			<TBValue />
+		</Allumette>
+		<Allumette>
+			<PBVisible>false</PBVisible>
+			<LBValues>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+				<string>4</string>
+			</LBValues>
+			<LBIndex>-1</LBIndex>
+			<TBValue />
+		</Allumette>
+		<Allumette>
+			<PBVisible>false</PBVisible>
+			<LBValues>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+				<string>4</string>
+			</LBValues>
+			<LBIndex>-1</LBIndex>
+			<TBValue />
+		</Allumette>
+		<Allumette>
+			<PBVisible>false</PBVisible>
+			<LBValues>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+				<string>4</string>
+			</LBValues>
+			<LBIndex>-1</LBIndex>
+			<TBValue />
+		</Allumette>
+		<Allumette>
+			<PBVisible>false</PBVisible>
+			<LBValues>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+				<string>4</string>
+			</LBValues>
+			<LBIndex>-1</LBIndex>
+			<TBValue />
+		</Allumette>
+		<Allumette>
+			<PBVisible>false</PBVisible>
+			<LBValues>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+				<string>4</string>
+			</LBValues>
+			<LBIndex>-1</LBIndex>
+			<TBValue />
+		</Allumette>
+		<Allumette>
+			<PBVisible>false</PBVisible>
+			<LBValues>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+				<string>4</string>
+			</LBValues>
+			<LBIndex>-1</LBIndex>
+			<TBValue />
+		</Allumette>
+		<Allumette>
+			<PBVisible>false</PBVisible>
+			<LBValues>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+				<string>4</string>
+			</LBValues>
+			<LBIndex>-1</LBIndex>
+			<TBValue />
+		</Allumette>
+		<Allumette>
+			<PBVisible>false</PBVisible>
+			<LBValues>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+				<string>4</string>
+			</LBValues>
+			<LBIndex>-1</LBIndex>
+			<TBValue />
+		</Allumette>
+		<Allumette>
+			<PBVisible>false</PBVisible>
+			<LBValues>
+				<string>1</string>
+				<string>2</string>
+				<string>3</string>
+				<string>4</string>
+			</LBValues>
+			<LBIndex>-1</LBIndex>
+			<TBValue />
+		</Allumette>
+	</ListAllumettes>
+	<NombreAllumetteRestante>0</NombreAllumetteRestante>
+	<NombrebAllumetteDepart>0</NombrebAllumetteDepart>
+	<NombrebAllumettePrise>0</NombrebAllumettePrise>
+	<AllumetteRestante>0</AllumetteRestante>
+	<ScoreIA>6</ScoreIA>
+	<Scorehumain>5</Scorehumain>
+	<Prise>4</Prise>
+	<QuelNiveau>2</QuelNiveau>
+	<QuiCommence>Chacun son tour</QuiCommence>
+	<DerniereAllumette>perd</DerniereAllumette>
+	<CombienAllumette>12</CombienAllumette>
+	<DeroulementPartie>
+		<string>*** Règles en cours ***</string>
+		<string>Dernière allumette = perd</string>
+		<string>Niveau = 2</string>
+		<string>Qui commence = Chacun son tour</string>
+		<string>Prise maximum = 4</string>
+		<string>Nombre d'allumettes = 12</string>
+		<string>**** Début de partie *** </string>
+		<string>Rejouons, Humain 5, Ordinateur 5</string>
+		<string>L'Ordinateur prend 1 allumette(s), il en reste 11</string>
+		<string>L'Humain prend 1 allumette, il en reste 10</string>
+		<string>L'Ordinateur prend 4 allumette(s), il en reste 6</string>
+		<string>L'Humain prend 2 allumettes, il en reste 4</string>
+		<string>L'Ordinateur prend 3 allumette(s), il en reste 1</string>
+		<string>L'Humain prend 1 allumette, il en reste 0</string>
+		<string>L'Ordinateur Gagne </string>
+	</DeroulementPartie>
+	<CommentaireIA>
+		<string>HiHAHHHHHH j'ai gagné.</string>
+		<string>I'm the best, j'adore les Maths ! </string>
+		<string>---------------------</string>
+		<string>A mon tour ... </string>
+		<string>Calculons : mon choix est 3 modulo 5 = 3</string>
+		<string>Je vais prendre alors 3 allumette(s). </string>
+		<string>.....................</string>
+		<string>A mon tour ... </string>
+		<string>Calculons : mon choix est 9 modulo 5 = 4</string>
+		<string>Je vais prendre alors 4 allumette(s). </string>
+		<string>.....................</string>
+		<string>A mon tour ... </string>
+		<string>Calculons : mon choix est 11 modulo 5 = 1</string>
+		<string>Je vais prendre alors 1 allumette(s). </string>
+		<string>.....................</string>
+	</CommentaireIA>
+	<ScorePartieIA>
+		<string>1</string>
+		<string>1</string>
+		<string>2</string>
+		<string>2</string>
+		<string>3</string>
+		<string>3</string>
+		<string>4</string>
+		<string>4</string>
+		<string>5</string>
+		<string>5</string>
+		<string>6</string>
+	</ScorePartieIA>
+	<ScorePartieHumain>
+		<string>0</string>
+		<string>1</string>
+		<string>1</string>
+		<string>2</string>
+		<string>2</string>
+		<string>3</string>
+		<string>3</string>
+		<string>4</string>
+		<string>4</string>
+		<string>5</string>
+		<string>5</string>
+	</ScorePartieHumain>
+	<Dernierchoix>
+		<string>13</string>
+		<string>13</string>
+		<string>13</string>
+	</Dernierchoix>
+</NIMConfig>

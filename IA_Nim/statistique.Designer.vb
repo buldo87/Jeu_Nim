@@ -122,6 +122,7 @@ Partial Class statistique
         '
         'LB_Score_Humain
         '
+        Me.LB_Score_Humain.Enabled = False
         Me.LB_Score_Humain.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_Score_Humain.FormattingEnabled = True
         Me.LB_Score_Humain.ItemHeight = 18
@@ -295,6 +296,7 @@ Partial Class statistique
         '
         'LB_Score_IA
         '
+        Me.LB_Score_IA.Enabled = False
         Me.LB_Score_IA.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_Score_IA.FormattingEnabled = True
         Me.LB_Score_IA.ItemHeight = 18

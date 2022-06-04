@@ -164,9 +164,11 @@ Partial Class Form1
         '
         'Tb_allumette_restante
         '
-        Me.Tb_allumette_restante.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tb_allumette_restante.Enabled = False
+        Me.Tb_allumette_restante.Font = New System.Drawing.Font("Segoe UI", 24.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Tb_allumette_restante.Location = New System.Drawing.Point(624, 79)
         Me.Tb_allumette_restante.Name = "Tb_allumette_restante"
+        Me.Tb_allumette_restante.ReadOnly = True
         Me.Tb_allumette_restante.Size = New System.Drawing.Size(56, 50)
         Me.Tb_allumette_restante.TabIndex = 42
         Me.Tb_allumette_restante.Text = "12"
@@ -224,7 +226,9 @@ Partial Class Form1
         '
         'LB_Partie
         '
-        Me.LB_Partie.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_Partie.Enabled = False
+        Me.LB_Partie.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_Partie.ForeColor = System.Drawing.Color.Black
         Me.LB_Partie.FormattingEnabled = True
         Me.LB_Partie.ItemHeight = 18
         Me.LB_Partie.Location = New System.Drawing.Point(823, 31)
@@ -244,7 +248,9 @@ Partial Class Form1
         '
         'LB_IA
         '
-        Me.LB_IA.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_IA.Enabled = False
+        Me.LB_IA.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LB_IA.ForeColor = System.Drawing.SystemColors.HotTrack
         Me.LB_IA.FormattingEnabled = True
         Me.LB_IA.ItemHeight = 17
         Me.LB_IA.Location = New System.Drawing.Point(12, 318)
@@ -254,13 +260,17 @@ Partial Class Form1
         '
         'LB_Choix_IA
         '
-        Me.LB_Choix_IA.Font = New System.Drawing.Font("Snap ITC", 21.75!)
+        Me.LB_Choix_IA.Enabled = False
+        Me.LB_Choix_IA.Font = New System.Drawing.Font("Snap ITC", 21.75!, System.Drawing.FontStyle.Bold)
+        Me.LB_Choix_IA.ForeColor = System.Drawing.SystemColors.MenuHighlight
         Me.LB_Choix_IA.FormattingEnabled = True
         Me.LB_Choix_IA.ItemHeight = 37
         Me.LB_Choix_IA.Location = New System.Drawing.Point(59, 157)
         Me.LB_Choix_IA.Name = "LB_Choix_IA"
         Me.LB_Choix_IA.Size = New System.Drawing.Size(56, 152)
         Me.LB_Choix_IA.TabIndex = 91
+        Me.LB_Choix_IA.TabStop = False
+        Me.LB_Choix_IA.UseTabStops = False
         '
         'GB_Choix_en_cours
         '
@@ -284,97 +294,123 @@ Partial Class Form1
         '
         'TB_En_cours_12
         '
+        Me.TB_En_cours_12.Enabled = False
         Me.TB_En_cours_12.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TB_En_cours_12.Location = New System.Drawing.Point(409, 7)
         Me.TB_En_cours_12.Name = "TB_En_cours_12"
+        Me.TB_En_cours_12.ReadOnly = True
         Me.TB_En_cours_12.Size = New System.Drawing.Size(31, 26)
         Me.TB_En_cours_12.TabIndex = 83
         '
         'TB_En_cours_11
         '
+        Me.TB_En_cours_11.Enabled = False
         Me.TB_En_cours_11.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TB_En_cours_11.Location = New System.Drawing.Point(372, 7)
         Me.TB_En_cours_11.Name = "TB_En_cours_11"
+        Me.TB_En_cours_11.ReadOnly = True
         Me.TB_En_cours_11.Size = New System.Drawing.Size(31, 26)
         Me.TB_En_cours_11.TabIndex = 82
         '
         'TB_En_cours_10
         '
+        Me.TB_En_cours_10.Enabled = False
         Me.TB_En_cours_10.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TB_En_cours_10.Location = New System.Drawing.Point(335, 7)
         Me.TB_En_cours_10.Name = "TB_En_cours_10"
+        Me.TB_En_cours_10.ReadOnly = True
         Me.TB_En_cours_10.Size = New System.Drawing.Size(31, 26)
         Me.TB_En_cours_10.TabIndex = 81
         '
         'TB_En_cours_9
         '
+        Me.TB_En_cours_9.Enabled = False
         Me.TB_En_cours_9.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TB_En_cours_9.Location = New System.Drawing.Point(298, 7)
         Me.TB_En_cours_9.Name = "TB_En_cours_9"
+        Me.TB_En_cours_9.ReadOnly = True
         Me.TB_En_cours_9.Size = New System.Drawing.Size(31, 26)
         Me.TB_En_cours_9.TabIndex = 80
         '
         'TB_En_cours_8
         '
+        Me.TB_En_cours_8.Enabled = False
         Me.TB_En_cours_8.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TB_En_cours_8.Location = New System.Drawing.Point(261, 7)
         Me.TB_En_cours_8.Name = "TB_En_cours_8"
+        Me.TB_En_cours_8.ReadOnly = True
         Me.TB_En_cours_8.Size = New System.Drawing.Size(31, 26)
         Me.TB_En_cours_8.TabIndex = 79
         '
         'TB_En_cours_7
         '
+        Me.TB_En_cours_7.Enabled = False
         Me.TB_En_cours_7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TB_En_cours_7.Location = New System.Drawing.Point(224, 7)
         Me.TB_En_cours_7.Name = "TB_En_cours_7"
+        Me.TB_En_cours_7.ReadOnly = True
         Me.TB_En_cours_7.Size = New System.Drawing.Size(31, 26)
         Me.TB_En_cours_7.TabIndex = 78
         '
         'TB_En_cours_6
         '
+        Me.TB_En_cours_6.Enabled = False
         Me.TB_En_cours_6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TB_En_cours_6.Location = New System.Drawing.Point(187, 7)
         Me.TB_En_cours_6.Name = "TB_En_cours_6"
+        Me.TB_En_cours_6.ReadOnly = True
         Me.TB_En_cours_6.Size = New System.Drawing.Size(31, 26)
         Me.TB_En_cours_6.TabIndex = 77
         '
         'TB_En_cours_5
         '
+        Me.TB_En_cours_5.Enabled = False
         Me.TB_En_cours_5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TB_En_cours_5.Location = New System.Drawing.Point(148, 7)
         Me.TB_En_cours_5.Name = "TB_En_cours_5"
+        Me.TB_En_cours_5.ReadOnly = True
         Me.TB_En_cours_5.Size = New System.Drawing.Size(31, 26)
         Me.TB_En_cours_5.TabIndex = 76
         '
         'TB_En_cours_4
         '
+        Me.TB_En_cours_4.Enabled = False
         Me.TB_En_cours_4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TB_En_cours_4.Location = New System.Drawing.Point(113, 7)
         Me.TB_En_cours_4.Name = "TB_En_cours_4"
+        Me.TB_En_cours_4.ReadOnly = True
         Me.TB_En_cours_4.Size = New System.Drawing.Size(31, 26)
         Me.TB_En_cours_4.TabIndex = 75
         '
         'TB_En_cours_3
         '
+        Me.TB_En_cours_3.Enabled = False
         Me.TB_En_cours_3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TB_En_cours_3.Location = New System.Drawing.Point(76, 7)
         Me.TB_En_cours_3.Name = "TB_En_cours_3"
+        Me.TB_En_cours_3.ReadOnly = True
         Me.TB_En_cours_3.Size = New System.Drawing.Size(31, 26)
         Me.TB_En_cours_3.TabIndex = 74
         '
         'TB_En_cours_2
         '
+        Me.TB_En_cours_2.Enabled = False
         Me.TB_En_cours_2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TB_En_cours_2.Location = New System.Drawing.Point(39, 7)
         Me.TB_En_cours_2.Name = "TB_En_cours_2"
+        Me.TB_En_cours_2.ReadOnly = True
         Me.TB_En_cours_2.Size = New System.Drawing.Size(31, 26)
         Me.TB_En_cours_2.TabIndex = 73
         '
         'TB_En_cours_1
         '
+        Me.TB_En_cours_1.Cursor = System.Windows.Forms.Cursors.Arrow
+        Me.TB_En_cours_1.Enabled = False
         Me.TB_En_cours_1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TB_En_cours_1.HideSelection = False
         Me.TB_En_cours_1.Location = New System.Drawing.Point(2, 7)
         Me.TB_En_cours_1.Name = "TB_En_cours_1"
+        Me.TB_En_cours_1.ReadOnly = True
         Me.TB_En_cours_1.Size = New System.Drawing.Size(31, 26)
         Me.TB_En_cours_1.TabIndex = 72
         '
@@ -392,6 +428,7 @@ Partial Class Form1
         Me.GroupBox1.Controls.Add(Me.LB_choix_possible_3)
         Me.GroupBox1.Controls.Add(Me.LB_choix_possible_2)
         Me.GroupBox1.Controls.Add(Me.LB_choix_possible_1)
+        Me.GroupBox1.Enabled = False
         Me.GroupBox1.Location = New System.Drawing.Point(162, 157)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(454, 120)
@@ -400,7 +437,8 @@ Partial Class Form1
         '
         'LB_choix_possible_7
         '
-        Me.LB_choix_possible_7.Font = New System.Drawing.Font("Segoe UI", 14.25!)
+        Me.LB_choix_possible_7.Enabled = False
+        Me.LB_choix_possible_7.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold)
         Me.LB_choix_possible_7.FormattingEnabled = True
         Me.LB_choix_possible_7.ItemHeight = 25
         Me.LB_choix_possible_7.Location = New System.Drawing.Point(227, 8)
@@ -410,7 +448,8 @@ Partial Class Form1
         '
         'LB_choix_possible_12
         '
-        Me.LB_choix_possible_12.Font = New System.Drawing.Font("Segoe UI", 14.25!)
+        Me.LB_choix_possible_12.Enabled = False
+        Me.LB_choix_possible_12.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold)
         Me.LB_choix_possible_12.FormattingEnabled = True
         Me.LB_choix_possible_12.ItemHeight = 25
         Me.LB_choix_possible_12.Location = New System.Drawing.Point(412, 8)
@@ -420,7 +459,8 @@ Partial Class Form1
         '
         'LB_choix_possible_11
         '
-        Me.LB_choix_possible_11.Font = New System.Drawing.Font("Segoe UI", 14.25!)
+        Me.LB_choix_possible_11.Enabled = False
+        Me.LB_choix_possible_11.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold)
         Me.LB_choix_possible_11.FormattingEnabled = True
         Me.LB_choix_possible_11.ItemHeight = 25
         Me.LB_choix_possible_11.Location = New System.Drawing.Point(375, 8)
@@ -430,7 +470,8 @@ Partial Class Form1
         '
         'LB_choix_possible_10
         '
-        Me.LB_choix_possible_10.Font = New System.Drawing.Font("Segoe UI", 14.25!)
+        Me.LB_choix_possible_10.Enabled = False
+        Me.LB_choix_possible_10.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold)
         Me.LB_choix_possible_10.FormattingEnabled = True
         Me.LB_choix_possible_10.ItemHeight = 25
         Me.LB_choix_possible_10.Location = New System.Drawing.Point(338, 8)
@@ -440,7 +481,8 @@ Partial Class Form1
         '
         'LB_choix_possible_9
         '
-        Me.LB_choix_possible_9.Font = New System.Drawing.Font("Segoe UI", 14.25!)
+        Me.LB_choix_possible_9.Enabled = False
+        Me.LB_choix_possible_9.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold)
         Me.LB_choix_possible_9.FormattingEnabled = True
         Me.LB_choix_possible_9.ItemHeight = 25
         Me.LB_choix_possible_9.Location = New System.Drawing.Point(301, 8)
@@ -450,7 +492,8 @@ Partial Class Form1
         '
         'LB_choix_possible_8
         '
-        Me.LB_choix_possible_8.Font = New System.Drawing.Font("Segoe UI", 14.25!)
+        Me.LB_choix_possible_8.Enabled = False
+        Me.LB_choix_possible_8.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold)
         Me.LB_choix_possible_8.FormattingEnabled = True
         Me.LB_choix_possible_8.ItemHeight = 25
         Me.LB_choix_possible_8.Location = New System.Drawing.Point(264, 8)
@@ -460,7 +503,8 @@ Partial Class Form1
         '
         'LB_choix_possible_6
         '
-        Me.LB_choix_possible_6.Font = New System.Drawing.Font("Segoe UI", 14.25!)
+        Me.LB_choix_possible_6.Enabled = False
+        Me.LB_choix_possible_6.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold)
         Me.LB_choix_possible_6.FormattingEnabled = True
         Me.LB_choix_possible_6.ItemHeight = 25
         Me.LB_choix_possible_6.Location = New System.Drawing.Point(190, 8)
@@ -470,7 +514,8 @@ Partial Class Form1
         '
         'LB_choix_possible_5
         '
-        Me.LB_choix_possible_5.Font = New System.Drawing.Font("Segoe UI", 14.25!)
+        Me.LB_choix_possible_5.Enabled = False
+        Me.LB_choix_possible_5.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold)
         Me.LB_choix_possible_5.FormattingEnabled = True
         Me.LB_choix_possible_5.ItemHeight = 25
         Me.LB_choix_possible_5.Location = New System.Drawing.Point(151, 8)
@@ -480,7 +525,8 @@ Partial Class Form1
         '
         'LB_choix_possible_4
         '
-        Me.LB_choix_possible_4.Font = New System.Drawing.Font("Segoe UI", 14.25!)
+        Me.LB_choix_possible_4.Enabled = False
+        Me.LB_choix_possible_4.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold)
         Me.LB_choix_possible_4.FormattingEnabled = True
         Me.LB_choix_possible_4.ItemHeight = 25
         Me.LB_choix_possible_4.Location = New System.Drawing.Point(116, 8)
@@ -490,7 +536,8 @@ Partial Class Form1
         '
         'LB_choix_possible_3
         '
-        Me.LB_choix_possible_3.Font = New System.Drawing.Font("Segoe UI", 14.25!)
+        Me.LB_choix_possible_3.Enabled = False
+        Me.LB_choix_possible_3.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold)
         Me.LB_choix_possible_3.FormattingEnabled = True
         Me.LB_choix_possible_3.ItemHeight = 25
         Me.LB_choix_possible_3.Location = New System.Drawing.Point(79, 8)
@@ -500,7 +547,8 @@ Partial Class Form1
         '
         'LB_choix_possible_2
         '
-        Me.LB_choix_possible_2.Font = New System.Drawing.Font("Segoe UI", 14.25!)
+        Me.LB_choix_possible_2.Enabled = False
+        Me.LB_choix_possible_2.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold)
         Me.LB_choix_possible_2.FormattingEnabled = True
         Me.LB_choix_possible_2.ItemHeight = 25
         Me.LB_choix_possible_2.Location = New System.Drawing.Point(42, 8)
@@ -511,7 +559,7 @@ Partial Class Form1
         'LB_choix_possible_1
         '
         Me.LB_choix_possible_1.DisplayMember = "1"
-        Me.LB_choix_possible_1.Font = New System.Drawing.Font("Segoe UI", 14.25!)
+        Me.LB_choix_possible_1.Font = New System.Drawing.Font("Segoe UI", 14.25!, System.Drawing.FontStyle.Bold)
         Me.LB_choix_possible_1.FormattingEnabled = True
         Me.LB_choix_possible_1.ItemHeight = 25
         Me.LB_choix_possible_1.Location = New System.Drawing.Point(5, 8)
@@ -897,6 +945,7 @@ Partial Class Form1
         '
         'LB_Score_IA
         '
+        Me.LB_Score_IA.Enabled = False
         Me.LB_Score_IA.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_Score_IA.FormattingEnabled = True
         Me.LB_Score_IA.ItemHeight = 18
@@ -907,6 +956,7 @@ Partial Class Form1
         '
         'LB_Score_Humain
         '
+        Me.LB_Score_Humain.Enabled = False
         Me.LB_Score_Humain.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LB_Score_Humain.FormattingEnabled = True
         Me.LB_Score_Humain.ItemHeight = 18
@@ -1051,7 +1101,6 @@ Partial Class Form1
     Friend WithEvents LB_Partie As ListBox
     Friend WithEvents L_Dernier_choix As Label
     Friend WithEvents LB_IA As ListBox
-    Friend WithEvents LB_Choix_IA As ListBox
     Friend WithEvents GB_Choix_en_cours As GroupBox
     Friend WithEvents TB_En_cours_12 As TextBox
     Friend WithEvents TB_En_cours_11 As TextBox
@@ -1066,7 +1115,6 @@ Partial Class Form1
     Friend WithEvents TB_En_cours_2 As TextBox
     Friend WithEvents TB_En_cours_1 As TextBox
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents LB_choix_possible_12 As ListBox
     Friend WithEvents LB_choix_possible_11 As ListBox
     Friend WithEvents LB_choix_possible_10 As ListBox
     Friend WithEvents LB_choix_possible_9 As ListBox
@@ -1092,7 +1140,6 @@ Partial Class Form1
     Friend WithEvents PB_Allumette_1 As PictureBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Label8 As Label
-    Public WithEvents LB_choix_possible_1 As ListBox
     Friend WithEvents LB_dernier_choix_IA As ListBox
     Friend WithEvents Button4 As Button
     Friend WithEvents Label3 As Label
@@ -1104,7 +1151,6 @@ Partial Class Form1
     Friend WithEvents GB_Setup As GroupBox
     Friend WithEvents CB_Niveau As ComboBox
     Friend WithEvents L_Niveau As Label
-    Friend WithEvents Cb_PerdGagne As ComboBox
     Friend WithEvents Label2 As Label
     Friend WithEvents MenuStrip1 As MenuStrip
     Friend WithEvents FichierToolStripMenuItem As ToolStripMenuItem
@@ -1122,4 +1168,8 @@ Partial Class Form1
     Friend WithEvents Timer1 As Timer
     Friend WithEvents StatistiquesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents FolderBrowserDialog1 As FolderBrowserDialog
+    Protected Friend WithEvents Cb_PerdGagne As ComboBox
+    Protected Friend WithEvents LB_choix_possible_12 As ListBox
+    Friend WithEvents LB_choix_possible_1 As ListBox
+    Public WithEvents LB_Choix_IA As ListBox
 End Class

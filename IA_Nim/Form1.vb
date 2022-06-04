@@ -83,6 +83,11 @@ Public Class Form1
         LB_Choix_IA.Items.Clear()
         LB_Score_Humain.Items.Clear()
         LB_Score_IA.Items.Clear()
+        CB_Commence.DropDownStyle = ComboBoxStyle.DropDownList
+        CB_Niveau.DropDownStyle = ComboBoxStyle.DropDownList
+        Cb_PerdGagne.DropDownStyle = ComboBoxStyle.DropDownList
+        Cb_Prise.DropDownStyle = ComboBoxStyle.DropDownList
+        CB_allumette.DropDownStyle = ComboBoxStyle.DropDownList
 
 
         nbAllumetteRestante = CB_allumette.SelectedItem
@@ -176,9 +181,10 @@ Public Class Form1
 
         'Loop
         finTempo = False
-
+        LB_IA.Items.Insert(0, ".....................")
         LB_IA.Items.Insert(0, "Mon choix est " & t & " pour " & nbAllumetteRestante & " allumette(s)")
         LB_IA.Items.Insert(0, "A mon tour ... ")
+
         Dim cindex As Integer = listAllumettes.Item(index).choix.FindString(t)
         If cindex <> -1 Then listAllumettes.Item(index).choix.SelectedIndex = cindex
         LB_Choix_IA.SelectedIndex = t - 1
@@ -209,7 +215,7 @@ Public Class Form1
         Else
             t = listAllumettes.Item(index).choix.Items.Item(rancon.Next(count_choix_possible)) ' random des possibles
         End If
-
+        LB_IA.Items.Insert(0, ".....................")
         LB_IA.Items.Insert(0, "Mon choix est " & t & " pour " & nbAllumetteRestante & " allumette(s), il en reste " & nbAllumetteRestante)
         LB_Choix_IA.SelectedIndex = t - 1
         L_Dernier_choix.Text = nbAllumetteRestante
@@ -260,10 +266,10 @@ Public Class Form1
                 Case "1"
                     PremierCoup_IA()
 
-                Case "2"
-                    PremierCoup_IA()
                 Case "3"
-                    IA_calculBon() ' trouve directe la mauvaise solution.
+                    PremierCoup_IA()
+                Case "2"
+                    IA_calculBon() ' trouve directe la bonne solution.
                 Case "4"
                     IA_CalculMauvais() ' trouve directe la mauvaise solution.
                 Case Else
@@ -289,9 +295,9 @@ Public Class Form1
         Select Case niveau
             Case "1"
                 IA_Random()
-            Case "2"
-                IA_2()
             Case "3"
+                IA_2()
+            Case "2"
                 IA_calculBon() ' trouve directe la mauvaise solution.
             Case "4"
                 IA_CalculMauvais() ' trouve directe la mauvaise solution.
@@ -318,7 +324,7 @@ Public Class Form1
 
         Dim t As New Task(
         New Action(Sub()
-                       Thread.Sleep(1000)
+                       Thread.Sleep(1500)
 
                        Me.Invoke(Sub()
                                      nbAllumetteRestante = Tb_allumette_restante.Text
@@ -357,7 +363,8 @@ Public Class Form1
 
             L_Dernier_choix.Text = nbAllumetteRestante
             t = listAllumettes.Item(index).choix.Items.Item(rancon.Next(count_choix_possible)) ' random des possibles
-            LB_IA.Items.Insert(0, "Mon choix est " & t & " pour " & nbAllumetteRestante & " allumette(s), il en reste " & nbAllumetteRestante)
+            LB_IA.Items.Insert(0, ".....................")
+            LB_IA.Items.Insert(0, "Je vais choisir ... " & t & " pour " & nbAllumetteRestante & " allumette(s), il en reste " & nbAllumetteRestante)
 
 
             LB_Choix_IA.SelectedIndex = t - 1
@@ -404,7 +411,8 @@ Public Class Form1
             Dim count_choix_possible As Integer = listAllumettes.Item(index).choix.Items.Count
             If count_choix_possible = 0 Then 'si plus de choix possible
                 t = Math.Min(nbAllumetteRestante, Convert.ToInt32(LB_Choix_IA.Items.Item(rancon.Next(3))))
-                LB_IA.Items.Insert(0, "je n'ai plus de choix donc perdu pour moi !!!!!!")
+                LB_IA.Items.Insert(0, ".....................")
+                LB_IA.Items.Insert(0, "je n'ai plus de choix, je vais certainement perdre !!!!!!")
                 LB_IA.Items.Insert(0, "Mais ! Pfffff à mon tour ... ")
                 faitlagueule = True
                 LB_Choix_IA.SelectedIndex = t - 1
@@ -412,7 +420,8 @@ Public Class Form1
                 L_Dernier_choix.Text = nbAllumetteRestante 'le choix  est validé
                 t = listAllumettes.Item(index).choix.Items.Item(rancon.Next(count_choix_possible)) ' random des possibles
                 listAllumettes.Item(index).encours.Text = t
-                LB_IA.Items.Insert(0, "Mon choix est " & t & " pour " & nbAllumetteRestante & " allumette(s)")
+                LB_IA.Items.Insert(0, ".....................")
+                LB_IA.Items.Insert(0, "Je choisi " & t & " pour " & nbAllumetteRestante & " allumette(s).")
                 LB_IA.Items.Insert(0, "A mon tour ... ")
 
 
@@ -428,7 +437,7 @@ Public Class Form1
             PBIA.Image = My.Resources.a_vous
         End If
 
-        If nbAllumetteRestante <= 0 Then
+        If nbAllumetteRestante < 1 Then
             If Cb_PerdGagne.SelectedItem.ToString = "perd" Then
                 Perd()
             Else
@@ -450,40 +459,50 @@ Public Class Form1
     Public Sub IA_calculBon() ' trouve directe la solution.
 
         Dim t As Integer
-        Dim rancon As New Random
-        nbAllumetteRestante = Tb_allumette_restante.Text ' permet de choisir au hasard dans la liste
+        'Dim rancon As New Random ' permet de choisir au hasard dans la liste
+        nbAllumetteRestante = Tb_allumette_restante.Text
 
         If Cb_PerdGagne.SelectedItem.ToString = "perd" Then
-            t = Math.Min(nbAllumetteRestante, ((nbAllumetteRestante - 1) Mod (Cb_Prise.SelectedItem.ToString + 1)))
+            t = Math.Min(nbAllumetteRestante, (nbAllumetteRestante - 1) Mod (Cb_Prise.SelectedItem.ToString + 1))
             If t = 0 Then
-                LB_IA.Items.Insert(0, "Mais ! Pffff Bon d'accord, je vais prendre 1 ")
-                LB_IA.Items.Insert(0, "Mon choix est " & nbAllumetteRestante & " modulo " & Cb_Prise.SelectedItem.ToString + 1 & " = " & t)
+                LB_IA.Items.Insert(0, ".....................")
+                LB_IA.Items.Insert(0, "Mais ! Pffff Bon tanpis, je vais prendre une allumette. ")
+                LB_IA.Items.Insert(0, "Calculons : mon choix est " & nbAllumetteRestante & " modulo " & Cb_Prise.SelectedItem.ToString + 1 & " = " & t & " Mince !")
                 LB_IA.Items.Insert(0, "A mon tour ... ")
+
                 t = 1
             Else
-                LB_IA.Items.Insert(0, "Mon choix est " & nbAllumetteRestante - 1 & " modulo " & Cb_Prise.SelectedItem.ToString + 1 & " = " & t)
+                LB_IA.Items.Insert(0, ".....................")
+                LB_IA.Items.Insert(0, "Je vais prendre alors " & t & " allumette(s). ")
+                LB_IA.Items.Insert(0, "Calculons : mon choix est " & nbAllumetteRestante - 1 & " modulo " & Cb_Prise.SelectedItem.ToString + 1 & " = " & t)
                 LB_IA.Items.Insert(0, "A mon tour ... ")
+
             End If
         Else
             t = Math.Min(nbAllumetteRestante, (nbAllumetteRestante) Mod (Cb_Prise.SelectedItem.ToString + 1))
             If t = 0 Then
-                LB_IA.Items.Insert(0, "Pffff Bon d'accord, tanpis, je vais prendre 1 ")
-                LB_IA.Items.Insert(0, "Mon choix est " & nbAllumetteRestante & " modulo " & Cb_Prise.SelectedItem.ToString + 1 & " = " & t)
+                LB_IA.Items.Insert(0, ".....................")
+                LB_IA.Items.Insert(0, "Pffff Bon tanpis, je vais prendre une allumette. ")
+                LB_IA.Items.Insert(0, "Calculons : mon choix est " & nbAllumetteRestante & " modulo " & Cb_Prise.SelectedItem.ToString + 1 & " = " & t & " Mince !")
                 LB_IA.Items.Insert(0, "A mon tour ... ")
+
                 t = 1
             Else
-                LB_IA.Items.Insert(0, "Mon choix est " & nbAllumetteRestante & " modulo " & Cb_Prise.SelectedItem.ToString + 1 & " = " & t)
+                LB_IA.Items.Insert(0, ".....................")
+                LB_IA.Items.Insert(0, "Je vais prendre alors " & t & " allumette(s). ")
+                LB_IA.Items.Insert(0, "Calculons : mon choix est " & nbAllumetteRestante & " modulo " & Cb_Prise.SelectedItem.ToString + 1 & " = " & t)
                 LB_IA.Items.Insert(0, "A mon tour ... ")
+
             End If
         End If
 
-        Cb_Prise.Text = (Math.Max(1, t))
+        'Cb_Prise.Text = Math.Max(1, t)
         LB_Choix_IA.SelectedIndex = t - 1
         nbAllumetteRestante -= t 'allumette = allumette - t
         Tb_allumette_restante.Text = nbAllumetteRestante 'afficher nouvelle valeur allumette restante
         LB_Partie.Items.Add("L'Ordinateur prend " & t & " allumette(s), il en reste " & nbAllumetteRestante)
 
-        If nbAllumetteRestante <= 0 Then
+        If nbAllumetteRestante < 1 Then
             If Cb_PerdGagne.SelectedItem.ToString = "perd" Then
                 Perd()
             Else
@@ -514,24 +533,33 @@ Public Class Form1
         If Cb_PerdGagne.SelectedItem.ToString = "perd" Then
             t = Math.Min(nbAllumetteRestante, ((nbAllumetteRestante) Mod (Cb_Prise.SelectedItem.ToString + 1)))
             If t = 0 Then
-                LB_IA.Items.Insert(0, "Pffff Bon d'accord, tanpis, je vais prendre 1 ")
-                LB_IA.Items.Insert(0, "Mon choix est " & nbAllumetteRestante & " modulo " & Cb_Prise.SelectedItem.ToString + 1 & " = " & t)
+                LB_IA.Items.Insert(0, ".....................")
+                LB_IA.Items.Insert(0, "Pffff Bon d'accord, tanpis, je vais prendre une allumette. ")
+                LB_IA.Items.Insert(0, "Calculons : mon choix est " & nbAllumetteRestante & " modulo " & Cb_Prise.SelectedItem.ToString + 1 & " = " & t & " Mince !")
                 LB_IA.Items.Insert(0, "A mon tour ... ")
                 t = 1
             Else
-                LB_IA.Items.Insert(0, "Mon choix est " & nbAllumetteRestante - 1 & " modulo " & Cb_Prise.SelectedItem.ToString + 1 & " = " & t)
+                LB_IA.Items.Insert(0, ".....................")
+                LB_IA.Items.Insert(0, "Pffff Bon d'accord, tanpis, je vais prendre une allumette. ")
+                LB_IA.Items.Insert(0, "Calculons : mon choix est " & nbAllumetteRestante - 1 & " modulo " & Cb_Prise.SelectedItem.ToString + 1 & " = " & t)
                 LB_IA.Items.Insert(0, "A mon tour ... ")
+
             End If
         Else
             t = Math.Min(nbAllumetteRestante, (nbAllumetteRestante - 1) Mod (Cb_Prise.SelectedItem.ToString + 1))
             If t = 0 Then
-                LB_IA.Items.Insert(0, "Pffff Bon d'accord, je vais prendre 1 ")
-                LB_IA.Items.Insert(0, "Mon choix est " & nbAllumetteRestante & " modulo " & Cb_Prise.SelectedItem.ToString + 1 & " = " & t)
+                LB_IA.Items.Insert(0, ".....................")
+                LB_IA.Items.Insert(0, "Pffff Bon d'accord, je vais prendre une allumette. ")
+                LB_IA.Items.Insert(0, "Calculons : mon choix est " & nbAllumetteRestante & " modulo " & Cb_Prise.SelectedItem.ToString + 1 & " = " & t & " Mince !")
                 LB_IA.Items.Insert(0, "A mon tour ... ")
+
                 t = 1
             Else
-                LB_IA.Items.Insert(0, "Mon choix est " & nbAllumetteRestante & " modulo " & Cb_Prise.SelectedItem.ToString + 1 & " = " & t)
+                LB_IA.Items.Insert(0, ".....................")
+                LB_IA.Items.Insert(0, "Je vais prendre alors " & t & " allumette(s). ")
+                LB_IA.Items.Insert(0, "Calculons : mon choix est " & nbAllumetteRestante & " modulo " & Cb_Prise.SelectedItem.ToString + 1 & " = " & t)
                 LB_IA.Items.Insert(0, "A mon tour ... ")
+
             End If
         End If
         Cb_Prise.Text = (t)
@@ -569,21 +597,26 @@ Public Class Form1
         LB_Score_IA.Items.Insert(0, L_Score_IA.Text)
         LB_Score_Humain.Items.Insert(0, L_Score_Humain.Text)
         If CB_Niveau.SelectedIndex.ToString = "0" Then
-            LB_IA.Items.Insert(0, "Quand il restait " & L_Dernier_choix.Text & " allumette(s), c'est simple ce jeu !")
-
-        ElseIf CB_Niveau.SelectedIndex.ToString = "1" Then
-            LB_IA.Items.Insert(0, "Quand il restait " & L_Dernier_choix.Text & " allumette(s), j'ai fait le bon choix, ne touchons à rien !")
+            LB_IA.Items.Insert(0, "---------------------")
+            LB_IA.Items.Insert(0, "C'est simple ce jeu !")
 
 
-        ElseIf CB_Niveau.SelectedIndex.ToString = "2" Then ' trouve directe la solution.
-            LB_IA.Items.Insert(0, "Quand il restait " & L_Dernier_choix.Text & " allumette(s), i'm the best, j'adore les Maths ! ")
+        ElseIf CB_Niveau.SelectedIndex.ToString = "2" Then
+            LB_IA.Items.Insert(0, "---------------------")
+            LB_IA.Items.Insert(0, "Quand il restait " & L_Dernier_choix.Text & " allumette(s), j'ai fait le bon choix, mémorisons cette valeur !")
+            LB_IA.Items.Insert(0, "Yes, je progresse !")
+
+        ElseIf CB_Niveau.SelectedIndex.ToString = "1" Then ' trouve directe la solution.
+            LB_IA.Items.Insert(0, "---------------------")
+            LB_IA.Items.Insert(0, "I'm the best, j'adore les Maths ! ")
 
 
         ElseIf CB_Niveau.SelectedIndex.ToString = "3" Then  ' trouve directe la mauvaise solution.
-            LB_IA.Items.Insert(0, "Quand il restait " & L_Dernier_choix.Text & " allumette(s), Pas possible !!!!!!!!!!!!! ! ")
+            LB_IA.Items.Insert(0, "Pas possible !!!!!!!!!!!!! ! ")
 
         End If
-        LB_IA.Items.Insert(0, "HiHAHHHHHH j'ai gagné")
+
+        LB_IA.Items.Insert(0, "HiHAHHHHHH j'ai gagné.")
 
         L_NombrePartie.Text = Convert.ToString(Convert.ToInt32(L_Score_Humain.Text) + Convert.ToInt16(L_Score_IA.Text))
         PartieEncours = Partie.Fin
@@ -600,26 +633,35 @@ Public Class Form1
         LB_Score_Humain.Items.Insert(0, L_Score_Humain.Text)
 
         If CB_Niveau.SelectedIndex.ToString = "0" Then 'en fonction du niveau 1
-            LB_IA.Items.Insert(0, "Pas de chance !")
+            LB_IA.Items.Insert(0, "---------------------")
+            LB_IA.Items.Insert(0, "Je n'ai pas de chance !")
 
-        ElseIf CB_Niveau.SelectedIndex.ToString = "1" Then 'en fonction du niveau 2
+        ElseIf CB_Niveau.SelectedIndex.ToString = "2" Then 'en fonction du niveau 3 ia
             Dim value As Integer = L_Dernier_choix.Text - 1 ' index de ListAllumettes
             If L_Dernier_choix.Text <> "13" Then
                 Dim cindex As Integer = listAllumettes.Item(value).choix.FindString(listAllumettes.Item(value).encours.Text) 'cindex nb allumettes dans encours
                 If L_Dernier_choix.Text <> 0 Then
-                    If cindex <> -1 And listAllumettes.Item(nbAllumetteDepart - nbAllumettePrise).choix.Items.ToString <> "" Then listAllumettes.Item(value).choix.Items.RemoveAt(cindex) 'efface le dernier choix valide
+                    nbAllumetteDepart = CB_allumette.SelectedItem
+                    If cindex <> -1 And listAllumettes.Item(nbAllumetteDepart - nbAllumettePrise).choix.Items.ToString <> "" Then
+                        listAllumettes.Item(value).choix.Items.RemoveAt(cindex) 'efface le dernier choix valide
+                    End If
                 End If
+                LB_IA.Items.Insert(0, "---------------------")
                 LB_IA.Items.Insert(0, "J'effaçe de mes choix possible : Prendre " & cindex + 1 & " allumette(s)")
                 LB_IA.Items.Insert(0, "Mais pourquoi ai-je fait ce choix quand il restait " & L_Dernier_choix.Text & " allumette(s) ?")
-                LB_IA.Items.Insert(0, "OUPPS j'ai perdu")
+                LB_IA.Items.Insert(0, "OK j'ai perdu, mais ça ne va pas durer ...")
             End If
 
-        ElseIf CB_Niveau.SelectedIndex.ToString = "4" Then 'en fonction du niveau 5
-            LB_IA.Items.Insert(0, "Quand il restait " & L_Dernier_choix.Text & " allumette(s), tu est fort ... ")
-            LB_IA.Items.Insert(0, "mais pourquoi ai-je fait ce dernier choix ?")
+        ElseIf CB_Niveau.SelectedIndex.ToString = "1" Then 'en fonction du niveau 2
+            LB_IA.Items.Insert(0, "---------------------")
+            LB_IA.Items.Insert(0, "Tu es très fort ... ")
+            LB_IA.Items.Insert(0, "Félicitation Humain !")
 
-        ElseIf CB_Niveau.SelectedIndex.ToString = "5" Then 'en fonction du niveau 6
-            LB_IA.Items.Insert(0, "Quand il restait " & L_Dernier_choix.Text & " allumette(s), Mince, faut revoir mes calculs ! ")
+        ElseIf CB_Niveau.SelectedIndex.ToString = "3" Then 'en fonction du niveau 4
+            LB_IA.Items.Insert(0, "---------------------")
+            LB_IA.Items.Insert(0, "Mince, il faudrait revoir mes calculs ! ")
+            LB_IA.Items.Insert(0, "OUPPS j'ai perdu.")
+
         End If
 
         L_NombrePartie.Text = Convert.ToString(Convert.ToInt32(L_Score_Humain.Text) + Convert.ToInt16(L_Score_IA.Text))
