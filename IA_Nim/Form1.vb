@@ -641,6 +641,7 @@ Public Class Form1
             If L_Dernier_choix.Text <> "13" Then
                 Dim cindex As Integer = listAllumettes.Item(value).choix.FindString(listAllumettes.Item(value).encours.Text) 'cindex nb allumettes dans encours
                 If L_Dernier_choix.Text <> 0 Then
+                    nbAllumettePrise = Cb_Prise.SelectedItem.ToString
                     nbAllumetteDepart = CB_allumette.SelectedItem
                     If cindex <> -1 And listAllumettes.Item(nbAllumetteDepart - nbAllumettePrise).choix.Items.ToString <> "" Then
                         listAllumettes.Item(value).choix.Items.RemoveAt(cindex) 'efface le dernier choix valide

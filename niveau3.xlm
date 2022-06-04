@@ -99,14 +99,14 @@
 	<ScoreIA>22</ScoreIA>
 	<Scorehumain>24</Scorehumain>
 	<Prise>3</Prise>
-	<QuelNiveau>2</QuelNiveau>
+	<QuelNiveau>3</QuelNiveau>
 	<QuiCommence>Chacun son tour</QuiCommence>
 	<DerniereAllumette>perd</DerniereAllumette>
 	<CombienAllumette>12</CombienAllumette>
 	<DeroulementPartie>
 		<string>*** Règle en cours ***</string>
 		<string>Dernière allumette = perd</string>
-		<string>Niveau = 2</string>
+		<string>Niveau = 3</string>
 		<string>Qui commence = Chacun son tour</string>
 		<string>Prise maximum = 3</string>
 		<string>Nombre d'allumette = 12</string>
