@@ -19,4 +19,4 @@ Les parties sont mémorisables et permettent de charger des parties.
 
 Ce jeu montre de façon ludique, en comparant les statiques des différentes parties, qu'une intelligence artificielle a besoin d'apprentissage pour devenir performante.
 
-
+vidéo https://www.youtube.com/watch?v=P-z3eAuV1kc
