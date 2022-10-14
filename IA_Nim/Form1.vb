@@ -244,7 +244,7 @@ Public Class Form1
             Case "Humain"
                 aquiLeTour = Player.Humain
 
-            Case "IA"
+            Case "Ordinateur"
                 aquiLeTour = Player.IA
 
             Case "Chacun son tour"
@@ -1181,5 +1181,6 @@ Public Class Form1
         statistique.Show()
 
     End Sub
+
 
 End Class
